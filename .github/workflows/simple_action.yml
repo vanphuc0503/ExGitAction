@@ -2,8 +2,22 @@ name: Actions Workflow
 
 # on: [push, pull_request]
 on:
-  repository_dispatch: 
-    types: [build]
+  push:
+#     branches-ignore:
+    branches:
+      - master
+      - 'feature/*' # matches feature/featA, feature/featB, feature/featA & doesn't match feature/feat/a
+      - 'feature/**'
+      - '!feature/featureC' # skip whenever
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+      - '!filename.js'
+#     paths-ignore:
+#       - 'docs/**'
+#   repository_dispatch:
+#     types: [build]
 # schedule:
 #   - cron: "0/5 * * * *"
 #   - cron: "0/6 * * * *"
