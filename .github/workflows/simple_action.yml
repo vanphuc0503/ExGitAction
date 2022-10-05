@@ -11,11 +11,12 @@ on:
       - '!feature/featureC' # skip whenever
     tags:
       - v1.*
+#       tags-ignore
     paths:
       - '**.js'
       - '!filename.js'
 #     paths-ignore:
-#       - 'docs/**'
+#       - 'gitaction/**'
 #   repository_dispatch:
 #     types: [build]
 # schedule:
